@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import ClothingCard from "../components/ClothingCard";
 import { ClothingItem, ClothingCategory } from "@/lib/type";
+import { Button } from "@/components/ui/button";
 
 export default function WardrobePage() {
   const [items, setItems] = useState<ClothingItem[]>([]);
@@ -31,32 +32,27 @@ export default function WardrobePage() {
   };
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">My Wardrobe</h1>
+    <div className="p-6 w-[60vw] border border-solid rounded-lg shadow-lg bg-gray-50 ml-auto mr-auto mt-40">
+      <h1 className="text-2xl font-bold mb-4">Closy - My Wardrobe manager </h1>
 
       <div className="mb-4 flex gap-2">
         {["ALL", "TOP", "BOTTOM", "SHOES", "ACCESSORY"].map((cat) => (
-          <button
+          <Button
             key={cat}
+            variant={filter === cat ? "default" : "outline"}
+            size="sm"
             onClick={() => setFilter(cat as ClothingCategory | "ALL")}
-            className={`px-3 py-1 rounded ${
-              filter === cat
-                ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-gray-800"
-            }`}
           >
             {cat}
-          </button>
+          </Button>
         ))}
       </div>
 
       <div className="mb-4">
-        <a
-          href="/wardrobe/new"
-          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
-        >
-          Add New
-        </a>
+        <Button
+        variant="outline">
+          <a href="/wardrobe/new">Add New</a>
+        </Button>
       </div>
 
       {loading ? (

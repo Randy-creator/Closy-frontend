@@ -46,7 +46,7 @@ export default function EditWardrobeItemPage() {
   if (!form) return <p>Item not found 😢</p>;
 
   return (
-    <div className="p-6 max-w-md mx-auto">
+    <div className="p-6 max-w-md mx-auto border border-solid rounded-lg shadow-lg bg-gray-50 mt-40">
       <h1 className="text-2xl font-bold mb-4">Edit Item</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ClothingItem, ClothingCategory } from "@/lib/type";
+import { Button } from "@/components/ui/button";
 
 export default function NewWardrobeItemPage() {
   const router = useRouter();
@@ -32,7 +33,7 @@ export default function NewWardrobeItemPage() {
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto">
+    <div className="p-6 max-w-md mx-auto border border-solid rounded-lg shadow-lg bg-gray-50 mt-40">
       <h1 className="text-2xl font-bold mb-4">Add New Item</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
@@ -86,12 +87,12 @@ export default function NewWardrobeItemPage() {
           className="border p-2 rounded"
         />
 
-        <button
+        <Button
           type="submit"
-          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+          variant="default"
         >
           Save
-        </button>
+        </Button>
       </form>
     </div>
   );
