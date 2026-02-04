@@ -42,6 +42,7 @@ export default function WardrobePage() {
             variant={filter === cat ? "default" : "outline"}
             size="sm"
             onClick={() => setFilter(cat as ClothingCategory | "ALL")}
+            className="hover:shadow-lg transition-transform transform hover:scale-105 ease-in-out"
           >
             {cat}
           </Button>
@@ -50,7 +51,9 @@ export default function WardrobePage() {
 
       <div className="mb-4">
         <Button
-        variant="outline">
+          variant="outline"
+          className="hover:shadow-lg transition-transform transform hover:scale-105 ease-in-out"
+        >
           <a href="/wardrobe/new">Add New</a>
         </Button>
       </div>
